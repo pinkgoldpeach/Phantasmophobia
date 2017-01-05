@@ -1,0 +1,101 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:211), pid=2592, tid=8168
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_79-b15) (build 1.7.0_79-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.79-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000087f0800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=8168, stack(0x0000000009dd0000,0x0000000009ed0000)]
+
+Stack: [0x0000000009dd0000,0x0000000009ed0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x00000000087f0800 JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=8168, stack(0x0000000009dd0000,0x0000000009ed0000)]
+  0x00000000087ef000 JavaThread "Attach Listener" daemon [_thread_blocked, id=11140, stack(0x0000000009af0000,0x0000000009bf0000)]
+  0x00000000087e8000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10892, stack(0x0000000009860000,0x0000000009960000)]
+  0x0000000008798000 JavaThread "Finalizer" daemon [_thread_blocked, id=6608, stack(0x00000000095f0000,0x00000000096f0000)]
+  0x0000000008791000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6164, stack(0x0000000009980000,0x0000000009a80000)]
+  0x000000000055e800 JavaThread "main" [_thread_in_native, id=5384, stack(0x00000000023e0000,0x00000000024e0000)]
+
+Other Threads:
+  0x000000000878b800 VMThread [stack: 0x00000000096f0000,0x00000000097f0000] [id=4308]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000055cdb0] Threads_lock - owner thread: 0x000000000055e800
+[0x000000000055dab0] CompileThread_lock - owner thread: 0x00000000087f0800
+
+Heap
+ PSYoungGen      total 18944K, used 655K [0x00000000eaa80000, 0x00000000ebf80000, 0x0000000100000000)
+  eden space 16384K, 4% used [0x00000000eaa80000,0x00000000eab23e68,0x00000000eba80000)
+  from space 2560K, 0% used [0x00000000ebd00000,0x00000000ebd00000,0x00000000ebf80000)
+  to   space 2560K, 0% used [0x00000000eba80000,0x00000000eba80000,0x00000000ebd00000)
+ ParOldGen       total 42496K, used 0K [0x00000000c0000000, 0x00000000c2980000, 0x00000000eaa80000)
+  object space 42496K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c2980000)
+ PSPermGen       total 21504K, used 2156K [0x00000000bae00000, 0x00000000bc300000, 0x00000000c0000000)
+  object space 21504K, 10% used [0x00000000bae00000,0x00000000bb01b2f0,0x00000000bc300000)
+
+Card table byte_map: [0x00000000055a0000,0x00000000057d0000] byte_map_base: 0x0000000004fc9000
+
+Polling page: 0x0000000000130000
+
+Code Cache  [0x00000000024e0000, 0x0000000002750000, 0x00000000054e0000)
+ total_blobs=157 nmethods=0 adapters=125 free_code_cache=48778Kb largest_free_block=49948800
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (1 events):
+Event: 0.030 Thread 0x000000000055e800 Threw 0x00000000eaa8acd8 at C:\re\jdk7u79\2331\hotspot\src\share\vm\prims\jni.cpp:3991
+
+Events (10 events):
+Event: 0.062 loading class 0x000000000878b220 done
+Event: 0.062 loading class 0x00000000022b6970
+Event: 0.062 loading class 0x00000000022b6970 done
+Event: 0.062 loading class 0x00000000022c3050
+Event: 0.062 loading class 0x00000000022c3050 done
+Event: 0.063 loading class 0x000000000227c3b0
+Event: 0.063 loading class 0x000000000227c3b0 done
+Event: 0.063 Thread 0x00000000087e8000 Thread added: 0x00000000087e8000
+Event: 0.063 Thread 0x00000000087ef000 Thread added: 0x00000000087ef000
+Event: 0.063 Thread 0x00000000087f0800 Thread added: 0x00000000087f0800
+
+
+Dynamic libraries:
+0x000000013f950000 - 0x000000013f983000 	C:\Program Files\Java\jdk1.7.0_79\bin\java.exe
+0x0000000077670000 - 0x0000000077819000 	C:\windows\SYSTEM32\ntdll.dll
+0x0000000077450000 - 0x0000000077570000 	C:\windows\system32\kernel32.dll
+0x000007fefd4e0000 - 0x000007fefd54c000 	C:\windows\system32\KERNELBASE.dll

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="at.ac.tuwien.ims.svn.phantasmophobia.MenuActivity"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/tower_bg_compressed"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageButton
+            android:id="@+id/level1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/level1"
+            android:baselineAlignBottom="true"
+            android:clickable="true" />
+
+        <ImageButton
+            android:id="@+id/level2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/level2"
+            android:baselineAlignBottom="true"
+            android:clickable="true" />
+
+
+
+
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
